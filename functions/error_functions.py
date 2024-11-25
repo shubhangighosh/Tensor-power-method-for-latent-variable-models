@@ -79,7 +79,8 @@ def compute_errors_vs_k(k_values, sup_norm_bound, L, M, seed=42):
 
     for k in tqdm(k_values, desc="Computing Errors for different k"):
         # Generate the symmetric tensor with the current k and sup_norm_bound
-        etens = generate_symmetric_tensor(k=k, sup_norm_bound=sup_norm_bound, seed=seed)
+        bound = sup_norm_bound/k
+        etens = generate_symmetric_tensor(k=k, sup_norm_bound=bound, seed=seed)
 
         # Generate the orthogonal tensor and the combined tensor
         otens, oeval, oevecs = generate_orthogonal_tensor(k=k)
