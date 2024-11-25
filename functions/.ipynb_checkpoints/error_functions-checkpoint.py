@@ -20,7 +20,8 @@ def tens_vs_errmat(sup_norm_bound, L, M):
         inner_products (list): List of inner products for corresponding eigenvectors.
     """
     # Generate the symmetric tensor with the current sup_norm_bound
-    etens = generate_symmetric_tensor(k=3, sup_norm_bound=sup_norm_bound)
+    bound = sup_norm_bound/k
+    etens = generate_symmetric_tensor(k=3, sup_norm_bound=bound)
 
     # Generate the orthogonal tensor and the combined tensor
     otens, oeval, oevecs = generate_orthogonal_tensor(k=3)
