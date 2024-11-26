@@ -21,10 +21,10 @@ def tens_vs_errmat(sup_norm_bound, L, M):
     """
     # Generate the symmetric tensor with the current sup_norm_bound
     bound = sup_norm_bound/k
-    etens = generate_symmetric_tensor(k=3, sup_norm_bound=bound)
+    etens = generate_symmetric_tensor(k=10, sup_norm_bound=bound)
 
     # Generate the orthogonal tensor and the combined tensor
-    otens, oeval, oevecs = generate_orthogonal_tensor(k=3)
+    otens, oeval, oevecs = generate_orthogonal_tensor(k=10)
 
     # Combine the tensors
     exptens = otens + etens
